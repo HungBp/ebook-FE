@@ -1,0 +1,18 @@
+.hidden {
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.show {
+  outline: thin dotted;
+}
+
+.show:hover {
+  cursor: pointer;
+}
+
+.preview {
+  max-width: 100px;
+  height: auto;
+}

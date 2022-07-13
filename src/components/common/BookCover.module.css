@@ -1,0 +1,37 @@
+.bookCover {
+  position: relative;
+  width: fit-content;
+  margin: 1rem;
+}
+
+.bookCover:hover {
+  cursor: pointer;
+}
+
+.imgCover {
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  box-shadow: 0.1rem 0.1rem 0.8rem rgba(0, 0, 0, 0.5);
+}
+
+.text {
+  text-align: center;
+  margin: 0;
+  font-size: 2rem;
+}
+
+.icon {
+  max-width: 32px;
+  position: absolute;
+  top: -0.5rem;
+}
+
+.bestSeller {
+  left: -0.5rem;
+}
+
+.new {
+  right: -0.5rem;
+}
