@@ -1,30 +1,21 @@
-import { useContext } from "react";
-import { BookContext } from "../../../contextProvider/BookContextProvider";
-import BookCover from "../../common/BookCover";
-import BookDelete from "../../databaseCRUD/BookDelete";
+import { Link } from "react-router-dom";
+import BookFilter from "../../common/BookFilter";
 import styles from "./HomeBestSeller.module.css";
 
 function HomeBestSeller() {
-  const {books, isLoading} = useContext(BookContext);
-  const numBook = 5;
-
-  const bookBestSellerList = books.filter((book) => book.bestSeller === true);
-  const shuffleBookBestSellerList = bookBestSellerList.sort(() => 0.5 - Math.random());
-  const booksBestSeller = shuffleBookBestSellerList.slice(0, numBook);
-
-  // need make seperate delete button component
-
-
-  return ( 
+  return (
     <div className={styles.bestSeller}>
-      {
-        booksBestSeller.map(book => 
-          <div  key={book._id}>
-            { !isLoading && <BookCover book={book} /> }
-            { !isLoading && <BookDelete book={book} /> }
-          </div>
-        )
-      }
+      <BookFilter
+        filter = {{bestSeller: true}}
+        heading = {
+          <>
+            <Link className={styles.heading} to="BestSeller"><h2> Best Seller </h2></Link>
+            <hr className={styles.break}/>
+          </>
+        }
+        numOfBooks = {6}
+        titleShow = {true}
+      />
     </div>
   );
 }

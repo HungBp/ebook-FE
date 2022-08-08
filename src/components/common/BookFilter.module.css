@@ -1,0 +1,8 @@
+.bookFilter {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: inherit;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 0 5%;
+}

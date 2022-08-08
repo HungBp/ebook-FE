@@ -1,4 +1,9 @@
 .delBtn {
   display: block;
-  margin: 0 auto;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+
+.delBtn:hover {
+  cursor: pointer;
 }

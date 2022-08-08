@@ -1,13 +1,28 @@
-.NewArrived {
-  font-size: 1.6rem;
-  display: flex;
-  flex-direction: row;
+.newArrived {
   flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
+  background-image: linear-gradient(to bottom, var(--color4), var(--color5));
 }
 
+.heading {
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
+  text-decoration: none;
+  color: black;
+  transition: color 0.5s, transform 0.5s;
+}
 
-@media screen and (min-width: 1000px ) {
+.heading:hover {
+  color: var(--color1);
+  transform: scale(1.05);
+}
 
+.break {
+  margin: 2rem 4rem 2rem 4rem;
+}
+
+@media screen and (min-width: 850px ) {
+  .newArrived {
+    flex-wrap: nowrap;
+  }
 }

@@ -1,0 +1,143 @@
+.container {
+  order: 2;
+  height: 30px;
+  width: 200px;
+  position: relative;
+  display: flex;
+  margin: 0.5rem 0 1rem 0;
+}
+
+.searchBar {
+  height: inherit;
+  width: inherit;
+  margin: 0;
+  padding: 0 3rem 0 1rem;
+  background-color: var(--color4);
+  visibility: visible;
+  z-index: 2;
+}
+
+.searchBar::-webkit-search-cancel-button {
+  appearance: none;
+}
+
+.icon {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  z-index: 3;
+  opacity: 0.6;
+}
+
+.icon:hover {
+  cursor: text;
+}
+
+.searchList {
+  padding: 0;
+  margin: 0;
+  width: 300px;
+  display: none;
+  position: fixed;
+  top: 230px;
+  left: calc(50% - 150px);
+  background-color: var(--color4);
+  list-style-type: none;
+  box-shadow: 0.1rem 0.1rem 0.5rem black;
+  z-index: 3;
+}
+
+.book {
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.6rem;
+  transition: all 0.5s;
+}
+
+.book:hover {
+  cursor: pointer;
+  background-color: var(--color2);
+  font-weight: bold;
+}
+
+.book:nth-child(6) {
+  font-weight: bold;
+}
+
+.title, .author {
+  text-align: center;
+  margin: 0;
+  padding: 0.2rem 0;
+}
+
+.author {
+  font-size: 1.4rem;
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.noMatching {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 1rem;
+  background-color: red;
+}
+
+.more {
+  text-decoration: none;
+  color: black;
+}
+
+.background {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+@media screen and (min-width: 600px) {
+  .container {
+    width: 0px;
+    margin: 0 1.1rem;
+    overflow: visible;
+  }
+  
+  .searchBar {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 0px;
+    visibility: hidden;
+    text-align: center;
+    transition: all 0.5s;
+  }
+  
+  .searchList {
+    top: 42px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .container {
+    width: 200px;
+    margin: 0 1.8rem;
+  }
+
+  .searchBar {
+    position: initial;
+    top: auto;
+    right: auto;
+    width: inherit;
+    margin: 0;
+    visibility: visible;
+    text-align: left;
+    transition: none;
+  }
+}

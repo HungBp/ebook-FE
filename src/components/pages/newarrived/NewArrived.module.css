@@ -1,0 +1,9 @@
+.newArrived {
+  flex-wrap: wrap;
+  background-image: linear-gradient(to bottom, var(--color4), var(--color5));
+}
+
+.heading {
+  padding: 1rem;
+  margin: 0;
+}

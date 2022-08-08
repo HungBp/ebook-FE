@@ -1,0 +1,7 @@
+.pageContent {
+  position: relative;
+  top: 50px;
+  min-height: calc(100vh - 100px);
+  transition: all 0.5s;
+  z-index: 1;
+}

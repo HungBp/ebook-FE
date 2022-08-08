@@ -1,35 +1,29 @@
-import React, { useState, useEffect } from "react";
-export const uriBookFetch = "http://localhost:4000/book";
-export const BookContext = React.createContext("");
+import { useState, useEffect, createContext } from "react";
+export const BookContext = createContext("");
 
 function BookContextProvider({children}) {
   const [books, setBooks] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   
   useEffect(() => {
-    const reqOption = {
-      method: "GET"
-    };
-    fetch(uriBookFetch, reqOption)
-      .then((res) => {
+    fetch("/book", {method: "GET"})
+      .then(res => res.json().then(data => {
         if (!res.ok) {
-          throw new Error("Network was error");
+          throw data.error;
+        } else {
+          setBooks(data);
+          setIsLoading(false);
         }
-        return res.json();
-      })
-      .then((data) => {
-        setBooks(data);
-        setIsLoading(false);
-      })
-      .catch((err) => {
+      }))
+      .catch(err => {
         console.log(err);
         setIsLoading(false);
       });
+      // eslint-disable-next-line
   }, []);
 
   return (
     <BookContext.Provider value={{books, setBooks, isLoading}}>
-      {isLoading && <p>Is loading...</p>}
       {children}
     </BookContext.Provider>
   );

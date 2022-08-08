@@ -1,0 +1,48 @@
+.footer {
+  position: relative;
+  top: 50px;
+  height: 50px;
+  /* margin-top: 10px; */
+  background-color: var(--color1);
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.para {
+  font-size: 1.3rem;
+  text-align: center;
+  width: fit-content;
+  margin: auto 0.5rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.icon {
+  width: 30px;
+  margin: auto 0.5rem;
+}
+
+
+@media screen and (min-width: 400px) {
+  .para {
+    font-size: 1.6rem;
+    margin: auto 1rem;
+  }
+
+  .icon {
+    margin: auto 1rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .para {
+    font-size: 2rem;
+  }
+}

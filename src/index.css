@@ -1,10 +1,27 @@
 html {
   font-size: 10px;
+  /* step for linear gradient background color */
+  --color1: #2b7a78;
+  --color2: #3aafa9;
+  --color3: #c8f0ef;
+  --color4: #def2f1;
+  --color5: white;
 }
 
 body {
+  margin: 0;
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: 3.5vmax;
+  text-align: center;
+  margin: 0;
+}
+
+h2 {
+  font-size: 3vmax;
+  margin: 0;
+  text-align: center;
 }

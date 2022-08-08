@@ -1,26 +1,18 @@
+import axios from 'axios';
 import { useContext } from "react";
-import { uriBookFetch, BookContext } from "../../contextProvider/BookContextProvider";
+import { BookContext } from "../../contextProvider/BookContextProvider";
 import styles from "./BookDelete.module.css";
 
 function BookDelete({book}) {
   const {books, setBooks} = useContext(BookContext);
 
   function handleDeleteBtnClick(id) {
-    fetch(`${uriBookFetch}/${id}`, {method: "DELETE"})
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error("Network was error");
-        }
-        return res.json();
-      })
-      .then((data) => {
-        if(data.acknowledged) {
-          setBooks(books.filter((book) => book._id !== id))
-        }
-      })
-      .catch((error) => {
-        console.log("There has been a problem with your fetch operation:", error);
-      })
+    window.confirm("You want to delete this book?") &&
+    axios.delete(`/book/${id}`, {headers: {"Content-Type": "application/json","Authorization": `Bearer ${localStorage.getItem("token")}`}})
+      .then(res => (res.statusText === "OK") && res.data.acknowledged && setBooks(books.filter(book => book._id !== id)))
+      .catch(err => {
+        console.log(err);
+      });
   }
 
   return (

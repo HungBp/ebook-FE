@@ -1,0 +1,19 @@
+.category {
+  background-color: white;
+}
+
+.categorySection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: var(--color4);
+  width: 80%;
+  border-radius: 1rem;
+  margin: 2rem auto;
+}
+
+.headingSection {
+  margin: 0 auto;
+  padding: 1rem;
+}

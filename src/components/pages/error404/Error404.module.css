@@ -1,0 +1,12 @@
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: calc(100vh - 110px);
+}
+
+.para {
+  font-size: 10rem;
+  margin: 0;
+}

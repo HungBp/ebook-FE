@@ -1,0 +1,78 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: calc(100vh - 100px);
+}
+
+.frame {
+  position: relative;
+  width: 70%;
+  height: fit-content;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: var(--color3);
+  box-shadow: 0.2rem 0.2rem 0.5rem var(--color2);
+}
+
+.section {
+  position: relative;
+  margin: 0 auto 1rem auto;
+}
+
+.label {
+  text-align: center;
+  width: fit-content;
+  margin: auto;
+  display: block;
+  margin: 0 auto 0.5rem auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.heading {
+  font-size: 2rem;
+}
+
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  font-size: 1.6rem;
+  padding: 0 3rem;
+}
+
+.icon {
+  position: absolute;
+  top: 3rem;
+  right: 0.5rem;
+  width: 1.6rem;
+}
+
+.passwordMatch {
+  position: absolute;
+  top: calc(100% + 1rem);
+  left: 0;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  background-color: rgba(255, 0, 0, 0.7);
+}
+
+.loginBtn {
+  display: block;
+  margin: 1rem auto 0 auto;
+}
+
+@media screen and (min-width: 600px ) {
+  .frame {
+    width: 40%;
+  }
+}
